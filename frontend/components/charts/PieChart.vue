@@ -1,6 +1,6 @@
 <template>
   <div class="chart-body">
-    <BaseLineChart
+    <BasePieChart
       :ref="chartId"
       :chart-data="chartData"
       :title="chartName"
@@ -44,12 +44,12 @@
 </template>
 <script>
 import XLSX from 'xlsx'
-import BaseLineChart from '~/components/baseChart/BaseLineChart'
+import BasePieChart from '~/components/baseChart/BasePieChart'
 
 export default {
-  name: 'LineChart',
+  name: 'PieChart',
   components: {
-    BaseLineChart,
+    BasePieChart,
   },
   props: {
     chartId: {
@@ -85,48 +85,9 @@ export default {
             fontSize: 18,
             text: 'VMI',
           },
-          scales: {
-            yAxes: [
-              {
-                stacked: false,
-                gridLines: {
-                  display: true,
-                },
-                ticks: {
-                  fontSize: 15,
-                  padding: 10,
-                  userCallback(label, index, labels) {
-                    return label / 1000000
-                  },
-                },
-              },
-            ],
-            xAxes: [
-              {
-                stacked: false,
-                ticks: {
-                  fontSize: 15,
-                  padding: 10,
-                },
-                gridLines: {
-                  display: true,
-                },
-              },
-            ],
+          legend: {
+            position: 'top',
           },
-          tooltips: {
-            mode: 'index',
-            intersect: false,
-            titleFontSize: 18,
-            bodyFontSize: 15,
-            displayColors: false,
-            titleAlign: 'center',
-            itemSort(a, b, data) {
-              return b.yLabel - a.yLabel
-            },
-          },
-          width: '100%',
-          minWidth: '500px',
         }
       },
     },

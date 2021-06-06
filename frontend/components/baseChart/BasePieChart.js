@@ -1,9 +1,9 @@
 import 'chartjs-plugin-colorschemes'
-import { Line, mixins } from 'vue-chartjs'
+import { Pie, mixins } from 'vue-chartjs'
 const { reactiveProp } = mixins
 
 export default {
-  extends: Line,
+  extends: Pie,
   mixins: [reactiveProp],
   props: {
     title: String,

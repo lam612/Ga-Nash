@@ -1,5 +1,6 @@
 require('dotenv').config()
-const { GET_VMI_API_URL, ADD_VMI_API_URL } = process.env
+const { GET_VMI_API_URL, ADD_VMI_API_URL, RESET_VMI_API_URL, GET_JOB_STATUS } =
+  process.env
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -49,6 +50,8 @@ export default {
 
   env: {
     GET_VMI_API_URL: GET_VMI_API_URL || 'http://localhost:80',
+    RESET_VMI_API_URL: RESET_VMI_API_URL || 'http://localhost:80',
     ADD_VMI_API_URL: ADD_VMI_API_URL || 'http://localhost:80',
+    GET_JOB_STATUS: GET_JOB_STATUS || 'http://localhost:80',
   },
 }
